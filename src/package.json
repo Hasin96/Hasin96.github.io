@@ -1,0 +1,17 @@
+{
+  "name": "mazegame",
+  "version": "1.0.0",
+  "description": "Maze game finish with as much wealth as possible",
+  "main": "sketch.js",
+  "dependencies": {
+    "chai": "^4.2.0"
+  },
+  "devDependencies": {
+    "mocha": "^6.2.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "Hasin",
+  "license": "MIT"
+}

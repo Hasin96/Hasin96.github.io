@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>p5.js example</title>
+    <style>
+     body {padding: 0; margin: 0;}
+     ul li {
+       display:inline-block;
+     }
+
+     .parEl {
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%);
+     }
+
+     .answerBox {
+       display: none;
+     }
+
+     .modal {
+      width: 41rem;
+      background-color: lightgray;
+      position: absolute;
+      left: 50%;
+      top: 30%;
+      transform: translate(-50%, -50%)
+     }
+
+     .modal-content {
+        padding: 1.5rem 2rem 1.5rem 2rem;
+     }
+
+     .modal-header {
+       text-align:center;
+        padding: 1.5rem 2rem 1.5rem 2rem;
+     }
+     .btn {
+
+       display: inline-block;
+        margin-bottom: 0; 
+        text-align: center;
+        vertical-align: middle;
+        touch-action: manipulation;
+        cursor: pointer;
+        background-image: none;
+        border: 1px solid transparent;
+        white-space: nowrap;
+        background-color:lightblue;
+        color:blue;
+        padding:0.5rem 1.5rem;
+     }
+
+     .header {
+      text-align: center;
+      margin-bottom: 2rem;
+     }
+
+     </style>
+    <script src="p5.js"></script>
+    <script src="p5.dom.js"></script>
+    <script src="p5.sound.js"></script>
+    <script src="cell.js"></script>
+    <script src="enemy.js"></script>
+    <script src="sketch.js"></script>
+    
+  </head>
+  <body>
+    <div class='header'>
+      <h2 class='header-title'>
+        Maze game
+      </h2>
+      <div class='header-content'>
+        Finish the game with as much wealth as possible with monsters lurking in the maze. (They are avoidable).
+        Hint: Monsters drop coins after death
+        <div class=''>Use the W, S, A, D keys to move</div>
+      </div>
+    </div>
+    <div class="parEl">
+      <ul style="list-style:none">
+        <li>coins: <span class="money">0</span></li>
+      </ul>
+      <div class='gameOver'>
+        <div class='gameOver-content'></div>
+      </div>
+      <div class='dialog'>
+        <div class='dialog-question'></div>
+        <div class='dialog-answers'>
+          <span class='dialog-answer-y' yes></span>
+          <span class='dialog-answer-n' no></span>
+          <input class='answerBox' value=''/>
+        </div>
+      </div>
+      <div class='actions'>
+        <button class='action-stab btn btn-prm' stab>Stab enemy</button>
+        <button class='action-club btn btn-prm' club>Club enemy</button>
+        <button class='resetP btn btn-prm'>Reset</button>
+      </div>
+
+    </div>
+
+
+    <div class='modal' style='display:none'>
+      <div class='modal-content'>
+        <div class='modal-header'>GAME OVER</div>
+        <div class='modal-content'>You finished with <span class='final-coins'></span> coins, the max you can get is 1400 coins. Try again</div>
+      </div>
+      <div class='model-footer'>
+        <div class='modal-action'>
+          <button class='reset btn'>Play again</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
